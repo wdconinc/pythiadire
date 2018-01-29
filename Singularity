@@ -1,10 +1,9 @@
 Bootstrap:docker  
-From:nadiafisher/pythiadire:v1
+From:nadinefischer/pythiadire:v1
 
 %files
 
 %labels
-MAINTAINER Wouter Deconinck
 
 %environment
 
