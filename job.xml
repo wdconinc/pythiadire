@@ -1,0 +1,23 @@
+<Request>
+  <Email email="wdconinc@jlab.org" request="false" job="false"/>
+  <Project name="qweak"/>
+  <Track name="simulation"/>
+  <Name name="pythiadire"/>
+  <OS name="centos7"/>
+  <Command><![CDATA[
+unzip ~wdconinc/Software.zip
+module unload singularity && module load singularity-2.4.2
+singularity shell -B `pwd`:/jupyter /home/wdconinc/dire/wdconinc-pythiadire-master-latest.simg runOnCluster test
+  ]]></Command>
+
+  <Memory space="1800" unit="MB"/>
+  <TimeLimit unit="minutes" time="4320"/>
+
+  <Job>
+    <Output src="result.yoda" dest="/home/wdconinc/dire/result.yoda"/>
+    <Stdout dest="/home/wdconinc/dire/log.out"/>
+    <Stderr dest="/home/wdconinc/dire/log.err"/>
+  </Job>
+
+</Request>
+
